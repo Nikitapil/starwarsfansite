@@ -7,4 +7,10 @@ export default class FilmService {
       );
       return response;
     }
+    static async getSingleFilm(id) {
+      const response = await axios.get(
+        `https://swapi.dev/api/films/${id}`
+      );
+      return response;
+    }
   }

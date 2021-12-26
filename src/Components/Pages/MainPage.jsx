@@ -3,7 +3,7 @@ import { useFetching } from "../../Hooks/UseFetching";
 import FilmService from "../../Services/FilmService";
 import { FilmCard } from "../Links/FilmLink";
 import { Template } from "../Template/Template";
-import { Loader } from "../Ui/Loader";
+import { Loader } from "../Ui/Loader/Loader";
 import './mainpage.scss'
 export const MainPage = () => {
     const [films, setFilms] = useState([])
@@ -35,7 +35,7 @@ export const MainPage = () => {
               fifth-highest-grossing media franchise of all time.
             </p>
             <p className="main__description-text">
-                  If you want to learn more about characters, locations and episodes - use navigation bar at the top
+                  If you want to learn more about characters, Planets, Species, Starships and Vehicles - use navigation bar at the top
               </p>
           </div>
           <div className="main__films">

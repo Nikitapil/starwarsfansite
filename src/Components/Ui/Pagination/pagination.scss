@@ -1,0 +1,19 @@
+.pagination {
+    display: flex;
+    gap: 7px;
+}
+.pagination-btn {
+    background: none;
+    border: 2px solid #FFEE58;
+    padding: 5px 7px;
+    color: #FFEE58;
+    transition: 0.5s;
+    font-weight: 700;
+    &:hover {
+        background-color: #ffee5865;
+    }
+}
+.pagination-btn_active {
+    background-color: #FFEE58;
+    color: #000000;
+}
