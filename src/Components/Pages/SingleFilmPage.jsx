@@ -19,7 +19,7 @@ export const SingleFilmPage = () => {
     const {id} = useParams()
     const [fetchSingleFilm, isFilmLoading, isFilmError] = useFetching( async () => {
         const response = await  FilmService.getSingleFilm(id)
-        const CharactersResponse = await CommonService.getCharactersOfItem(response)
+        const CharactersResponse = await CommonService.getCharactersOfItem(response, 'characters')
         const PlanetRespone = await CommonService.getPlanetsOfItem(response)
         const StarshipsRespone = await CommonService.getStarshipsOfItem(response)
         const VehiclesRespone = await CommonService.getVehiclesOfItem(response)
@@ -57,7 +57,7 @@ export const SingleFilmPage = () => {
                 <p className='single-film__release'><span>Release</span>: {film.release_date?.split('-').reverse().join('.')}</p>
             </div>
             <div className='single-film__data'>
-                <LinksList data={characters} className={'single-film__characters film__data-list'} basePath = 'characters' />
+                <LinksList data={characters} className={'single-film__characters film__data-list'} basePath = 'people' />
                 <LinksList data={planets} className={'single-film__planets film__data-list'} basePath = 'planets' />
                 <LinksList data={starShips} className={'single-film__starships film__data-list'} basePath = 'starships' />
                 <LinksList data={vehicles} className={'single-film__vehicles film__data-list'} basePath = 'vehicles' />

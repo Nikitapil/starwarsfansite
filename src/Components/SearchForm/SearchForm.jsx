@@ -11,8 +11,8 @@ export const SearchForm = ({setQuery}) => {
 
     return (
         <form className='searchform' onSubmit={submitHandler}>
-            <input type="search"  className='searchform__input' value={searchValue} onChange={(e) => setSearchValue(e.target.value)}/>
-            <button className='searchform__btn'>Найти</button>
+            <input type="search"  className='searchform__input' placeholder='Search' value={searchValue} onChange={(e) => setSearchValue(e.target.value)}/>
+            <button className='searchform__btn'>Search</button>
         </form>
     )
 }

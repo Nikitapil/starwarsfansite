@@ -14,6 +14,10 @@
     &:focus {
         background-color: #ffffff;
     }
+    &::placeholder {
+        color: #c4c1c1;
+        font-style: italic;
+    }
 }
 .searchform__btn {
     background: none;

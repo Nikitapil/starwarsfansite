@@ -2,8 +2,8 @@ import axios from "axios";
 
 export default class CommonService {
     
-    static async getCharactersOfItem(itemResponse) {
-      const response = await axios.all(itemResponse.data.characters.map((item)=> axios.get(item)))
+    static async getCharactersOfItem(itemResponse, key) {
+      const response = await axios.all(itemResponse.data[key].map((item)=> axios.get(item)))
       return response;
     }
     static async getPlanetsOfItem(itemResponse) {
@@ -22,6 +22,10 @@ export default class CommonService {
         const response = await axios.all(itemResponse.data.species.map((item)=> axios.get(item)))
         return response;
       }
+      static async getFilmsOfItem(itemResponse) {
+        const response = await axios.all(itemResponse.data.films.map((item)=> axios.get(item)))
+        return response;
+      }
       static async getAllItems(path, page, query) {
         const response = await axios.get(
           `https://swapi.dev/api/${path}/`,
@@ -31,6 +35,18 @@ export default class CommonService {
                 page: page,
               },
             }
+        );
+        return response;
+      }
+
+      static async getAdditionData(url) {
+        const response = await axios.get(url)
+        return response
+      }
+
+      static async getSingleItem(id, path) {
+        const response = await axios.get(
+          `https://swapi.dev/api/${path}/${id}`
         );
         return response;
       }
